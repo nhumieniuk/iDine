@@ -16,6 +16,7 @@
 		3F9B96BA26DD355A003A2B50 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B96B626DD355A003A2B50 /* Order.swift */; };
 		3F9B96BB26DD355A003A2B50 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B96B726DD355A003A2B50 /* menu.json */; };
 		3F9B96BC26DD355A003A2B50 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B96B826DD355A003A2B50 /* Menu.swift */; };
+		3FD0CA2326DE9D7F00024825 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0CA2226DE9D7F00024825 /* ItemDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3F9B96B626DD355A003A2B50 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = ../../../Downloads/idine/Order.swift; sourceTree = "<group>"; };
 		3F9B96B726DD355A003A2B50 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = menu.json; path = ../../../Downloads/idine/menu.json; sourceTree = "<group>"; };
 		3F9B96B826DD355A003A2B50 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = ../../../Downloads/idine/Menu.swift; sourceTree = "<group>"; };
+		3FD0CA2226DE9D7F00024825 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				3F9B96B626DD355A003A2B50 /* Order.swift */,
 				3F9B96A626DD349A003A2B50 /* iDineApp.swift */,
 				3F9B96A826DD349A003A2B50 /* ContentView.swift */,
+				3FD0CA2226DE9D7F00024825 /* ItemDetail.swift */,
 				3F752FF426DE862E00C1E361 /* ItemRow.swift */,
 				3F9B96AA26DD34A5003A2B50 /* Assets.xcassets */,
 				3F9B96AF26DD34A5003A2B50 /* Info.plist */,
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD0CA2326DE9D7F00024825 /* ItemDetail.swift in Sources */,
 				3F9B96A926DD349A003A2B50 /* ContentView.swift in Sources */,
 				3F9B96A726DD349A003A2B50 /* iDineApp.swift in Sources */,
 				3F9B96BA26DD355A003A2B50 /* Order.swift in Sources */,
