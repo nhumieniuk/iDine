@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1DDEE626DFD4070063C12B /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DDEE526DFD4070063C12B /* OrderView.swift */; };
 		3F752FF526DE862E00C1E361 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F752FF426DE862E00C1E361 /* ItemRow.swift */; };
 		3F9B96A726DD349A003A2B50 /* iDineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B96A626DD349A003A2B50 /* iDineApp.swift */; };
 		3F9B96A926DD349A003A2B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B96A826DD349A003A2B50 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1DDEE526DFD4070063C12B /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		3F752FF426DE862E00C1E361 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		3F9B96A326DD349A003A2B50 /* iDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9B96A626DD349A003A2B50 /* iDineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDineApp.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				3F9B96A626DD349A003A2B50 /* iDineApp.swift */,
 				3F9B96A826DD349A003A2B50 /* ContentView.swift */,
 				3FD0CA2226DE9D7F00024825 /* ItemDetail.swift */,
+				3F1DDEE526DFD4070063C12B /* OrderView.swift */,
 				3F752FF426DE862E00C1E361 /* ItemRow.swift */,
 				3F9B96AA26DD34A5003A2B50 /* Assets.xcassets */,
 				3F9B96AF26DD34A5003A2B50 /* Info.plist */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD0CA2326DE9D7F00024825 /* ItemDetail.swift in Sources */,
+				3F1DDEE626DFD4070063C12B /* OrderView.swift in Sources */,
 				3F9B96A926DD349A003A2B50 /* ContentView.swift in Sources */,
 				3F9B96A726DD349A003A2B50 /* iDineApp.swift in Sources */,
 				3F9B96BA26DD355A003A2B50 /* Order.swift in Sources */,
