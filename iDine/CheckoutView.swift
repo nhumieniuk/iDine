@@ -9,12 +9,21 @@ import SwiftUI
 
 struct CheckoutView: View {
     let paymentTypes = ["Cash", "Credit Card", "iDine Points"]
-    let tipAmounts = [10, 15, 20, 25, 0]
+    let tipAmounts = [0, 10, 15, 20, 25]
+    var totalPrice: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        let total = Double(order.total)
+        let tipValue = total / 100 * Double(tipAmount)
+        return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
+    }
     @EnvironmentObject var order: Order
     @State private var paymentType = "Cash"
     @State private var addLoyaltyDetails = false
     @State private var loyaltyNumber = ""
     @State private var tipAmount = 15
+    @State private var showingPaymentAlert = false
     var body: some View {
         Form {
             Section {
@@ -40,15 +49,18 @@ struct CheckoutView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
-            Section(header: Text("Total: $100")){
+            Section(header: Text("Total: \(totalPrice)")){
                 Button("Confirm order"){
-                    //place the order
+                    showingPaymentAlert.toggle()
                 }
             }
             
         }
         .navigationTitle("Payment")
         .navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $showingPaymentAlert) {
+            Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice)"), dismissButton: .default(Text("OK")))
+        }
     }
 }
 
