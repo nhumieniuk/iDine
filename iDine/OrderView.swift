@@ -21,14 +21,14 @@ struct OrderView: View {
                         }
                     }
                 }
-            }
-            Section {
-                NavigationLink(destination: Text("Check out")){
-                    Text("Place Order")
+                Section {
+                    NavigationLink(destination: CheckoutView()){
+                        Text("Place Order")
+                    }
                 }
+                .navigationTitle("Order")
+                .listStyle(InsetGroupedListStyle())
             }
-            .navigationTitle("Order")
-            .listStyle(InsetGroupedListStyle())
         }
     }
 }
