@@ -25,8 +25,31 @@ struct ItemDetail: View {
                 }
                Text(item.description)
                 .padding()
-                Button("Order this") {
-                    order.add(item: item)
+                Button(action: { order.add(item: item)})
+                {
+                    if(item.name == "All Out Donuts" || item.name == "Macarons Galore")
+                       {
+                        Text("Order \(item.name)")
+                            .multilineTextAlignment(.center)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .foregroundColor(Color.white)
+                            .font(Font.custom("ComicSansMS", size: 25))
+                            .padding()
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(100)
+                       }
+                    else
+                    {
+                        Text("Order a \(item.name)")
+                            .multilineTextAlignment(.center)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .foregroundColor(Color.white)
+                            .font(Font.custom("ComicSansMS", size: 25))
+                            .padding()
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.green, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(100)
+                    }
+                    
                 }
                 .font(.headline)
                Spacer()

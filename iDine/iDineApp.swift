@@ -15,5 +15,6 @@ struct iDineApp: App {
             MainView()
                 .environmentObject(order)
         }
+        
     }
 }
