@@ -12,24 +12,32 @@ struct OrderView: View {
     var body: some View {
         NavigationView{
             List{
-                Section{
+                Section {
                     ForEach(order.items) { item in
-                        HStack{
+                        HStack {
                             Text(item.name)
                             Spacer()
                             Text("$\(item.price)")
                         }
                     }
+                    .onDelete(perform: deleteItems)
                 }
                 Section {
                     NavigationLink(destination: CheckoutView()){
                         Text("Place Order")
                     }
                 }
+                .disabled(order.items.isEmpty)
                 .navigationTitle("Order")
                 .listStyle(InsetGroupedListStyle())
+                .toolbar {
+                    EditButton()
+                }
             }
         }
+    }
+    func deleteItems(at offsets: IndexSet) {
+        order.items.remove(atOffsets: offsets)
     }
 }
 
