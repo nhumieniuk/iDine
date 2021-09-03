@@ -10,6 +10,7 @@ import SwiftUI
 struct ItemDetail: View {
     let item: MenuItem
     @EnvironmentObject var order: Order
+    @State private var showToast = false
     var body: some View {
            VStack {
             ZStack(alignment: .bottomTrailing) {
@@ -25,7 +26,10 @@ struct ItemDetail: View {
                 }
                Text(item.description)
                 .padding()
-                Button(action: { order.add(item: item)})
+                Button(action: {
+                        order.add(item: item)
+                        showToast.toggle()
+                })
                 {
                     if(item.name == "All Out Donuts" || item.name == "Macarons Galore")
                        {
@@ -53,6 +57,9 @@ struct ItemDetail: View {
                 }
                 .font(.headline)
                Spacer()
+           }
+           .toast(isPresenting: $showToast){ //credit for this goes to https://github.com/elai950/AlertToast
+            AlertToast(type: .complete(Color.green), title: "Order added to checkout!")
            }
            .navigationTitle(item.name)
            .navigationBarTitleDisplayMode(.inline)
