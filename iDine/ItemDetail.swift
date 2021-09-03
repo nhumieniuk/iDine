@@ -10,7 +10,9 @@ import SwiftUI
 struct ItemDetail: View {
     let item: MenuItem
     @EnvironmentObject var order: Order
-    @State private var showToast = false
+    @EnvironmentObject var favorite: Favorites
+    @State private var showOrderToast = false
+    @State private var showFavoritesToast = false
     var body: some View {
            VStack {
             ZStack(alignment: .bottomTrailing) {
@@ -28,7 +30,7 @@ struct ItemDetail: View {
                 .padding()
                 Button(action: {
                         order.add(item: item)
-                        showToast.toggle()
+                        showOrderToast.toggle()
                 })
                 {
                     if(item.name == "All Out Donuts" || item.name == "Macarons Galore")
@@ -56,10 +58,24 @@ struct ItemDetail: View {
                     
                 }
                 .font(.headline)
-               Spacer()
+                .padding()
+            Button(action: {
+                favorite.add(item: item)
+                showFavoritesToast.toggle()
+            })
+            {
+                Text("⭐")
+                    .padding()
+                    .background(Color("lightYellow"))
+                    .cornerRadius(100)
+            }
            }
-           .toast(isPresenting: $showToast){ //credit for this goes to https://github.com/elai950/AlertToast
+        
+           .toast(isPresenting: $showOrderToast){ //credit for this goes to https://github.com/elai950/AlertToast
             AlertToast(type: .complete(Color.green), title: "Order added to checkout!")
+           }
+           .toast(isPresenting: $showFavoritesToast){ //credit for this goes to https://github.com/elai950/AlertToast
+            AlertToast(type: .complete(Color.yellow), title: "Favorited item!")
            }
            .navigationTitle(item.name)
            .navigationBarTitleDisplayMode(.inline)

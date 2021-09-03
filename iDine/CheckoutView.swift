@@ -20,6 +20,7 @@ struct CheckoutView: View {
         return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
     }
     @EnvironmentObject var order: Order
+    @EnvironmentObject var favorite: Favorites
     @State private var paymentType = "Cash"
     @State private var addLoyaltyDetails = false
     @State private var loyaltyNumber = ""
